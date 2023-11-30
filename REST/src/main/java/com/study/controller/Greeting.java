@@ -1,4 +1,4 @@
-package com.study.Controller;
+package com.study.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,7 +8,7 @@ import java.util.Map;
 
 @RestController
 public class Greeting {
-    @GetMapping("/")
+    @GetMapping("/greeting")
     public Map<String, Object> greeting(){
         return Collections.singletonMap("message", "Hello, World");
     }
