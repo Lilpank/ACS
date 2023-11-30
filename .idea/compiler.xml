@@ -8,11 +8,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Spring" />
         <module name="javaEE" />
+        <module name="REST" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="REST" options="-parameters" />
       <module name="Spring" options="-parameters" />
     </option>
   </component>

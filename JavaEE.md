@@ -1,4 +1,3 @@
-
 ## 1 JavaEE stack
 1. Был загружен GlassFish.
 
