@@ -14,18 +14,15 @@ public class MainController {
     @Autowired
     private FilmRepository filmRepository;
 
-
     @GetMapping("/")
-    public String main(
-            @RequestParam(required = false, defaultValue = "") String filter,
-            @RequestParam(required = false, defaultValue = "") Genres genre,
-            Model model
-    ) {
+    public String main(@RequestParam(required = false, defaultValue = "") String filter,
+                       @RequestParam(required = false, defaultValue = "") Genres genre,
+                        Model model) {
         Iterable<Film> films = filmRepository.findAll();
         if (genre != null) {
             films = filmRepository.findByGenres(genre);
 
-        }
+         }
 
         if (filter != null && !filter.isEmpty()) {
             films = filmRepository.findFilmsByTitle(filter);
