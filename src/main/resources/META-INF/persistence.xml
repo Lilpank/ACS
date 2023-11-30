@@ -10,12 +10,14 @@
             <property name="javax.persistence.schema-generation.database.action" value="validate"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
             <property name="hibernate.default_schema" value="public"/>
-            <property name="javax.persistence.schema-generation.scripts.action" value="drop-and-create"/>
-            <property name="javax.persistence.schema-generation.scripts.create-target" value="ETA-INF/sql/metadata.sql"/>
             <property name="hibernate.connection.CharSet" value="utf-8" />
             <property name="hibernate.connection.characterEncoding" value="utf-8" />
             <property name="hibernate.connection.useUnicode" value="true" />
             <property name="eclipselink.logging.level" value="FINE"/>
+            <property name="eclipselink.deploy-on-startup" value="true" />
+            <property name="hibernate.hbm2ddl.auto" value= "update" />
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+
         </properties>
     </persistence-unit>
 </persistence>

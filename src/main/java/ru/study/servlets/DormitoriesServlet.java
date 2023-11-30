@@ -6,26 +6,26 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import ru.study.models.dto.RoomsRequest;
-import ru.study.services.RoomsService;
+import ru.study.models.dto.DormitoriesRequest;
+import ru.study.services.DormitoriesService;
 import ru.study.utils.ObjectMapperFactory;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "roomsServlet", value = "/rooms")
-public class RoomsServlet extends HttpServlet {
+@WebServlet(value = "/dorm")
+public class DormitoriesServlet extends HttpServlet {
     private final ObjectMapper objectMapper = ObjectMapperFactory.json();
 
     @Inject
-    private RoomsService roomsService;
+    private DormitoriesService dormitoriesService;
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) {
         response.setContentType("text/json");
 
         try (PrintWriter out = response.getWriter()) {
-            out.print(objectMapper.writeValueAsString(roomsService.getAll()));
+            out.print(objectMapper.writeValueAsString(dormitoriesService.getAll()));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -33,16 +33,16 @@ public class RoomsServlet extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) {
-        RoomsRequest roomsRequest = new RoomsRequest();
-        roomsRequest.setId_room(Integer.parseInt(req.getParameter("id_room")));
+        DormitoriesRequest roomsRequest = new DormitoriesRequest();
+        roomsRequest.setUniversity(req.getParameter("university"));
         roomsRequest.setId_dorm(Integer.parseInt(req.getParameter("id_dorm")));
-        roomsService.create(roomsRequest);
+        dormitoriesService.create(roomsRequest);
     }
 
     @Override
     public void doDelete(HttpServletRequest req, HttpServletResponse resp) {
+        String university = req.getParameter("university");
         int id_dorm = Integer.parseInt(req.getParameter("id_dorm"));
-        int id_room = Integer.parseInt(req.getParameter("id_room"));
-        roomsService.delete(id_dorm, id_room);
+        dormitoriesService.delete(university, id_dorm);
     }
 }

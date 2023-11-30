@@ -1,9 +1,7 @@
 package ru.study.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -14,12 +12,18 @@ import lombok.*;
 @AllArgsConstructor
 @Table(name = "students")
 public class StudentsEntity {
+    @Column(name = "id_dorm")
+    private int id_dorm;
+
+    @JsonIgnore
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_card")
     private int id;
 
     @Column(name = "id_room")
     private int id_room;
+
 
     @Column(name = "full_name", unique = true)
     private String name;

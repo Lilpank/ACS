@@ -11,7 +11,6 @@ import ru.study.services.StudentsService;
 import ru.study.utils.ObjectMapperFactory;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.PrintWriter;
 
 @WebServlet(name = "studentsServlet", value = "/students")
@@ -33,17 +32,19 @@ public class StudentsServlet extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) {
-        try (InputStream is = req.getInputStream()) {
-            StudentsRequest departmentRequest = objectMapper.readValue(is, StudentsRequest.class);
-            studentsService.create(departmentRequest);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        StudentsRequest studentRequest = new StudentsRequest();
+        studentRequest.setId_room(Integer.parseInt(req.getParameter("id_room")));
+        studentRequest.setId(Integer.parseInt(req.getParameter("id")));
+        studentRequest.setName((req.getParameter("name")));
+        studentRequest.setSex((req.getParameter("sex")));
+        studentRequest.setScore(Float.parseFloat(req.getParameter("score")));
+        studentRequest.setYearEducation(Integer.parseInt(req.getParameter("yearEducation")));
+        studentsService.create(studentRequest);
     }
 
     @Override
     public void doDelete(HttpServletRequest req, HttpServletResponse resp) {
-        int studentId = Integer.parseInt((req.getPathInfo().substring(1)));
+        int studentId = Integer.parseInt(req.getParameter("id"));
         studentsService.delete(studentId);
     }
 }

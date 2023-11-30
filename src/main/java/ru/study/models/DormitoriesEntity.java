@@ -12,15 +12,12 @@ import lombok.*;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "rooms")
-public class RoomsEntity {
+@Table(name = "dormitories")
+public class DormitoriesEntity {
     @Id
-    @Column(name = "id_room")
-    private int id_room;
+    @Column(name = "university")
+    private String university;
 
-    @Id
     @Column(name = "id_dorm")
     private int id_dorm;
 }
-
-

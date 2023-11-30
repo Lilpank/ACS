@@ -12,11 +12,14 @@ import java.util.List;
 public class StudentsService {
     @Inject
     private StudentsRepository studentsRepository;
+
     public List<StudentsEntity> getAll() {
         return studentsRepository.findAll();
     }
+
     public void create(StudentsRequest studentsRequest) {
         StudentsEntity student = new StudentsEntity(
+                studentsRequest.getId_dorm(),
                 studentsRequest.getId(),
                 studentsRequest.getId_room(),
                 studentsRequest.getName(),
@@ -26,6 +29,7 @@ public class StudentsService {
         );
         studentsRepository.persist(student);
     }
+
     public void delete(int studentId) {
         studentsRepository.delete(studentId);
     }
