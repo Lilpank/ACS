@@ -15,3 +15,8 @@
    * Entity Bean - для хранения данных. Entity class: Dormitories, Rooms, Students.
    * Stateless Session Bean - для получения данных из бд. Stateless services class: Dormitories, Rooms, Students.  
 7. JSP - для отображения данных
+
+HTTP запросы:
+* GET: /main - отображения всех объектов. /university; /students; /rooms; - получение объектов.
+* POST: /university; /students; /rooms; - Для создания сущностей.
+* Delete: /university; /students; /rooms; - Для удаления сущностей.
