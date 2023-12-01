@@ -18,6 +18,6 @@ create table students(
  id_room int references rooms(id_room),
  full_name text not null,
  sex text check(sex = 'F' or sex ='M'),
- avg_score numeric(2, 1),
+ avg_score double,
  year_education int
 );

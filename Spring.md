@@ -2,7 +2,7 @@
 Проект - Фильмотека
 
 Общая структура БД
-![img.png](img.png)
+![img.png](assets/img.png)
 
 Основные компоненты Film, comment, rating, user.
 
