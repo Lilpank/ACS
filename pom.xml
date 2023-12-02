@@ -11,6 +11,7 @@
     <module>Spring</module>
     <module>javaEE</module>
     <module>REST</module>
+      <module>JMS</module>
   </modules>
   <packaging>pom</packaging>
 
