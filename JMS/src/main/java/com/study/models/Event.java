@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(name = "event")
-public class Entity {
+public class Event {
     @Id
     @Column(name = "id")
     private int id;
