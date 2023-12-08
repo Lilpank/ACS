@@ -1,2 +1,4 @@
-package com.study.config;public class WebConfig {
+package com.study.config;
+
+public class WebConfig {
 }
