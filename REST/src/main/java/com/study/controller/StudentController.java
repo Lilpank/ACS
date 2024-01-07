@@ -1,6 +1,7 @@
 package com.study.controller;
 
 import com.study.models.Student;
+
 import com.study.repos.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +18,7 @@ public class StudentController {
     StudentRepository studentRepository;
 
     @GetMapping("/student")
-    public @ResponseBody Iterable<Student> getStudents() {
+    public @ResponseBody Iterable<Student> getStudent() {
         return studentRepository.findAll();
     }
 
