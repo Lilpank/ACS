@@ -5,6 +5,7 @@
         <html>
             <head>
                 <meta charset="UTF-8"/>
+<<<<<<< HEAD
                 <title>Students</title>
             </head>
             <body>
@@ -12,11 +13,20 @@
             </body>
             <body>
                 <a href="/xsl/dorm">Show dormitories</a>
+=======
+                <title>Orders</title>
+            </head>
+            <body>
+                <a href="/xsl/orders">Show orders</a>
+>>>>>>> 0acf1ed31b62ebe8e967442038f3c29222b46b25
             </body>
         </html>
         <table border="1" style="margin-top: 5px">
             <tr bgcolor="#CCCCCC">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0acf1ed31b62ebe8e967442038f3c29222b46b25
                 <td>
                     <strong>id_dorm</strong>
                 </td>
@@ -39,7 +49,11 @@
                     <strong>year_education</strong>
                 </td>
             </tr>
+<<<<<<< HEAD
             <xsl:for-each select="ArrayList/item">
+=======
+            <xsl:for-each select="List/item">
+>>>>>>> 0acf1ed31b62ebe8e967442038f3c29222b46b25
                 <tr>
                     <td>
                         <xsl:value-of select="id_dorm"/>
@@ -60,7 +74,11 @@
                         <xsl:value-of select="avg_score"/>
                     </td>
                     <td>
+<<<<<<< HEAD
                         <xsl:value-of select="yearEducation"/>
+=======
+                        <xsl:value-of select="year_education"/>
+>>>>>>> 0acf1ed31b62ebe8e967442038f3c29222b46b25
                     </td>
                 </tr>
             </xsl:for-each>

@@ -8,10 +8,14 @@
                 <title>Dormitories</title>
             </head>
             <body>
+<<<<<<< HEAD
                 <a href="/xsl/room">Show rooms</a>
             </body>
             <body>
                 <a href="/xsl/student">Show students</a>
+=======
+                <a href="/xsl/orders">Show dormitories</a>
+>>>>>>> 0acf1ed31b62ebe8e967442038f3c29222b46b25
             </body>
         </html>
         <table border="1" style="margin-top: 5px">
@@ -23,7 +27,11 @@
                     <strong>id_dorm</strong>
                 </td>
             </tr>
+<<<<<<< HEAD
             <xsl:for-each select="ArrayList/item">
+=======
+            <xsl:for-each select="List/item">
+>>>>>>> 0acf1ed31b62ebe8e967442038f3c29222b46b25
                 <tr>
                     <td>
                         <xsl:value-of select="university"/>

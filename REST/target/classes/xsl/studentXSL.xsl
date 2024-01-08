@@ -5,13 +5,17 @@
         <html>
             <head>
                 <meta charset="UTF-8"/>
-                <title>Students</title>
+                <title>Orders</title>
             </head>
             <body>
+<<<<<<< HEAD
                 <a href="/xsl/room">Show rooms</a>
             </body>
             <body>
                 <a href="/xsl/dorm">Show dormitories</a>
+=======
+                <a href="/xsl/orders">Show orders</a>
+>>>>>>> 0acf1ed31b62ebe8e967442038f3c29222b46b25
             </body>
         </html>
         <table border="1" style="margin-top: 5px">
@@ -39,7 +43,7 @@
                     <strong>year_education</strong>
                 </td>
             </tr>
-            <xsl:for-each select="ArrayList/item">
+            <xsl:for-each select="List/item">
                 <tr>
                     <td>
                         <xsl:value-of select="id_dorm"/>
@@ -60,7 +64,7 @@
                         <xsl:value-of select="avg_score"/>
                     </td>
                     <td>
-                        <xsl:value-of select="yearEducation"/>
+                        <xsl:value-of select="year_education"/>
                     </td>
                 </tr>
             </xsl:for-each>

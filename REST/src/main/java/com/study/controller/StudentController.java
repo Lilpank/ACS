@@ -18,7 +18,7 @@ public class StudentController {
     StudentRepository studentRepository;
 
     @GetMapping("/student")
-    public @ResponseBody Iterable<Student> getStudents() {
+    public @ResponseBody Iterable<Student> getStudent() {
         return studentRepository.findAll();
     }
 
