@@ -5,27 +5,27 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-
-import java.io.Serializable;
 
 
 @Entity
 @Getter
 @Setter
+@RequiredArgsConstructor
 @Table(name = "students")
-public class Student implements Serializable {
-    @Column(name = "id_dorm")
-    private int id_dorm;
-
+public class Student {
     @Id
     @Column(name = "id_card")
     private int id_card;
 
+    @Column(name = "id_dorm")
+    private int id_dorm;
+
     @Column(name = "id_room")
     private int id_room;
 
-    @Column(name = "full_name", unique = true)
+    @Column(name = "full_name")
     private String full_name;
 
     @Column(name = "sex")

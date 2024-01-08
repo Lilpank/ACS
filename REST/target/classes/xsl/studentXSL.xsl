@@ -8,13 +8,20 @@
                 <title>Students</title>
             </head>
             <body>
-                <a href="/xsl/student">Show students</a>
+                <a href="/xsl/room">Show rooms</a>
+            </body>
+            <body>
+                <a href="/xsl/dorm">Show dormitories</a>
             </body>
         </html>
         <table border="1" style="margin-top: 5px">
             <tr bgcolor="#CCCCCC">
+
                 <td>
                     <strong>id_dorm</strong>
+                </td>
+                <td>
+                    <strong>id_card</strong>
                 </td>
                 <td>
                     <strong>id_room</strong>
@@ -29,13 +36,16 @@
                     <strong>avg_score</strong>
                 </td>
                 <td>
-                    <strong>yearEducation</strong>
+                    <strong>year_education</strong>
                 </td>
             </tr>
             <xsl:for-each select="ArrayList/item">
                 <tr>
                     <td>
                         <xsl:value-of select="id_dorm"/>
+                    </td>
+                    <td>
+                        <xsl:value-of select="id_card"/>
                     </td>
                     <td>
                         <xsl:value-of select="id_room"/>
