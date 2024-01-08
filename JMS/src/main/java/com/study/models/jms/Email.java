@@ -20,5 +20,4 @@ public class Email {
     @NonNull
     @Column(name = "body")
     private String body;
-
 }
